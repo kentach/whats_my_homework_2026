@@ -1,0 +1,39 @@
+<header class="lp-header">
+  <div class="header-container">
+
+    <div class="logo-area">
+      <%= link_to "#", class: "d-flex align-items-center text-decoration-none" do %>
+        <span class="logo-text">
+          <i class="fa-solid fa-graduation-cap"></i>
+          What's My <span>Homework?</span>
+        </span>
+      <% end %>
+    </div>
+
+    <button 
+      class="hamburger" 
+      id="hamburger-btn"
+      aria-expanded="false"
+      aria-controls="side-menu"
+      aria-label="メニューを開く">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+
+  <nav id="side-menu" class="side-menu">
+    <%= link_to '#', class: "menu-link" do %>
+      <i class="fa-solid fa-right-to-bracket"></i> ログイン
+    <% end %>
+
+    <%= link_to '#', class: "menu-link" do %>
+      <i class="fa-solid fa-user-plus"></i> 新規登録
+    <% end %>
+    <a href="#"><i class="fa-solid fa-star"></i> 機能紹介</a>
+    <a href="#"><i class="fa-solid fa-book-open"></i> 使い方ガイド</a>
+  </nav>
+</header>
+
+<div id="menu-overlay" class="menu-overlay"></div>

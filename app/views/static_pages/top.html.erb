@@ -1,0 +1,30 @@
+<%= render 'shared/before_login_header' %>
+
+<section class="top">
+  <div class="top-container">
+    <p class="top-sub-title">
+      <i class="fa-solid fa-graduation-cap icon"></i>
+      宿題確認アプリ
+    </p>
+
+    <h1 class="top-main-title">
+      What's My <span>Homework?</span>
+    </h1>
+    <p class="main-bottom">
+      自分の宿題がすぐわかる！
+    </p>
+
+    <div class="cta-buttons">
+      <%= link_to "#", class: "top-btn btn-primary primary" do %>
+        <i class="fa-solid fa-rocket"></i>
+        今すぐ始める
+      <% end %>
+
+      <%= link_to "#", class: "top-btn btn-secondary" do %>
+        <i class="fa-solid fa-right-to-bracket"></i>
+        ログインする
+      <% end %>
+    </div>
+  </div>
+</section>
+
