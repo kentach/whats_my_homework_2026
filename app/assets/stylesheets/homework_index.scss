@@ -1,0 +1,205 @@
+
+.homework-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 100px 30px 100px;
+  font-family: 'Helvetica Neue','Helvetica','Arial',sans-serif;
+}
+
+.page-title {
+  font-size: 24px;
+  margin: 30px 0;
+  color: #333;
+  font-weight: bold;
+}
+
+
+.homework-card {
+  background: linear-gradient(135deg, #ffffff, #fafafa);
+  border-radius: 18px;
+  padding: 18px 20px;
+  margin-bottom: 18px;
+
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  border: 1px solid #f1f1f1;
+
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.homework-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: #f97316;
+  border-radius: 4px 0 0 4px;
+}
+
+.homework-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   カード上部
+========================= */
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   バッジ
+========================= */
+.badge {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.grade {
+  background: rgba(249, 115, 22, 0.1);
+  color: #f97316;
+}
+
+/* =========================
+   タイトル
+========================= */
+.title {
+  font-size: 20px;
+  margin: 12px 0;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.title a {
+  text-decoration: none;
+  color: #111;
+}
+
+.title a:hover {
+  color: #f97316;
+}
+
+/* =========================
+   期間
+========================= */
+.period {
+  margin-top: 10px;
+}
+
+.info {
+  font-size: 13px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.info i {
+  color: #f97316;
+  font-size: 13px;
+}
+
+/* =========================
+   カード下部
+========================= */
+.card-bottom {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #555;
+}
+
+/* =========================
+   タブ（重要：z-index整理）
+========================= */
+.grade-tabs-wrapper {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  z-index: 250;
+  background: white;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.grade-tabs {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 10px 15px;
+  justify-content: center;
+  -webkit-overflow-scrolling: touch;
+}
+
+.grade-tab {
+  flex: 0 0 auto;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #f3f4f6;
+  color: #555;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.grade-tab:hover {
+  background: #fff7ed;
+  color: #f97316;
+}
+
+.grade-tab.active {
+  background: #f97316;
+  color: white;
+}
+
+/* =========================
+   アクションリンク
+========================= */
+.edit-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  background: #f97316;
+  padding: 5px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.edit-link:hover {
+  background: #ea580c;
+}
+
+.delete-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  background: #ef4444;
+  padding: 5px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-left: 6px;
+  transition: 0.2s;
+}
+
+.delete-link:hover {
+  background: #dc2626;
+}
+
+.pagination {
+  gap: 8px;
+}
+
+.page-link {
+  border-radius: 8px;
+  padding: 6px 12px;
+}
