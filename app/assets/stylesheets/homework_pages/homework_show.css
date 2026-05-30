@@ -1,0 +1,203 @@
+@charset "UTF-8";
+/* =========================
+  詳細カード（統一デザイン）
+========================= */
+.homework-detail {
+  max-width: 700px;
+  margin: 110px auto;
+  padding: 22px 22px 24px;
+  background: linear-gradient(135deg, #ffffff, #fafafa);
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f1f1f1;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 左アクセント */
+.homework-detail::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: #f97316;
+}
+
+/* =========================
+  ヘッダー（編集ボタン位置）
+========================= */
+.container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+/* =========================
+  タイトル
+========================= */
+.detail-title {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: #111;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* =========================
+  バッジ
+========================= */
+.detail-badges {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.badge {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.grade {
+  background: rgba(249, 115, 22, 0.1);
+  color: #f97316;
+}
+
+/* =========================
+  本文
+========================= */
+.detail-content {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+/* =========================
+  情報（枠付き）
+========================= */
+.detail-info {
+  background: #fafafa;
+  border-radius: 12px;
+  padding: 12px 14px;
+  border: 1px solid #eee;
+}
+
+.detail-info p {
+  margin: 6px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+/* =========================
+  タスクタイトル
+========================= */
+.task-title {
+  font-size: 17px;
+  margin: 22px 18px 22px;
+  color: #111;
+  font-weight: 600;
+}
+
+.task-description li {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111;
+  margin: 0 18px;
+  text-align: center;
+  list-style: none;
+}
+
+/* =========================
+  タスクカード化
+========================= */
+.task-list {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-item {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid #f1f1f1;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+  transition: 0.2s;
+}
+
+.task-item:hover {
+  transform: translateY(-2px);
+}
+
+.task-done {
+  text-decoration: line-through;
+  color: #9ca3af;
+  background: #f3f4f6;
+  border-left: 4px solid #34d399;
+  padding-left: 8px;
+  transition: 0.2s;
+}
+
+/* =========================
+  チェックUI
+========================= */
+.task-check-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.task-check:checked + span {
+  text-decoration: line-through;
+  color: #bbb;
+}
+
+/* =========================
+  戻るリンク（ボタン化）
+========================= */
+.back-link {
+  display: inline-block;
+  margin-top: 22px;
+  color: white;
+  background: #f97316;
+  padding: 8px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.back-link:hover {
+  background: #ea580c;
+}
+
+/* ヘッダー */
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ボタンエリア */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+/* スマホ対応 */
+@media (max-width: 600px) {
+  .detail-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .action-buttons {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}/*# sourceMappingURL=homework_show.css.map */

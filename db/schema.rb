@@ -10,17 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_05_30_085125) do
+ActiveRecord::Schema[7.2].define(version: 2026_05_30_110752) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "homeworks", force: :cascade do |t|
+  create_table "classrooms", force: :cascade do |t|
+    t.string "name"
+    t.string "eiken_level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "title", null: false
+  end
+
+  create_table "homeworks", force: :cascade do |t|
+    t.string "title"
     t.text "content"
-    t.date "test_start_date", null: false
-    t.date "test_end_date", null: false
+    t.date "test_start_date"
+    t.date "test_end_date"
+    t.bigint "classroom_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["classroom_id"], name: "index_homeworks_on_classroom_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -32,7 +41,12 @@ ActiveRecord::Schema[7.2].define(version: 2026_05_30_085125) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "classroom_id", null: false
+    t.index ["classroom_id"], name: "index_users_on_classroom_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
+  add_foreign_key "homeworks", "classrooms"
+  add_foreign_key "users", "classrooms"
 end

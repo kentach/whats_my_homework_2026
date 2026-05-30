@@ -1,22 +1,22 @@
 <section id="footer" class="footer-bottom">
   <div class="tab-menu">
 
-    <%= link_to root_path,
-        class: "tab-item #{current_page?(root_path) ? 'active' : ''}" do %>
+    <%= link_to homeworks_path,
+        class: "tab-item #{current_page?(homeworks_path) ? 'active' : ''}" do %>
       <i class="fa-regular fa-house"></i>
       <span>ホーム</span>
     <% end %>
 
-    <%= link_to favorites_path,
-        class: "tab-item #{current_page?(favorites_path) ? 'active' : ''}" do %>
-      <i class="fa-solid fa-music"></i>
-      <span>音声リスト</span>
+    <%= link_to '#',
+        class: "tab-item #{current_page?('#') ? 'active' : ''}" do %>
+        <i class="fa-solid fa-list"></i>
+      <span>ブックリスト</span>
     <% end %>
 
-    <%= link_to booklists_path,
-        class: "tab-item #{current_page?(booklists_path) ? 'active' : ''}" do %>
-      <i class="fa-solid fa-book-bookmark"></i>
-      <span>マイテキスト</span>
+    <%= link_to '#',
+        class: "tab-item #{current_page?('#') ? 'active' : ''}" do %>
+      <i class="fa-solid fa-chart-line"></i>
+      <span>完了状況</span>
     <% end %>
 
   </div>
