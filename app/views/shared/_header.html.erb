@@ -2,9 +2,9 @@
   <div class="header-container">
 
     <div class="logo-area">
-      <%= link_to "#", class: "d-flex align-items-center text-decoration-none" do %>
+      <%= link_to '#', class: "d-flex align-items-center text-decoration-none" do %>
         <span class="logo-text">
-          <i class="fa-solid fa-graduation-cap"></i>
+          <i class="fa-solid fa-book icon"></i>
           What's My <span>Homework?</span>
         </span>
       <% end %>
@@ -20,20 +20,17 @@
       <span></span>
       <span></span>
     </button>
-
   </div>
 </header>
 
 <nav id="side-menu" class="side-menu">
-    <%= link_to new_user_session_path, class: "menu-link" do %>
-      <i class="fa-solid fa-right-to-bracket"></i> ログイン
-    <% end %>
-
-    <%= link_to new_user_registration_path, class: "menu-link" do %>
-      <i class="fa-solid fa-user-plus"></i> 新規登録
-    <% end %>
-    <a href="#"><i class="fa-solid fa-star"></i> 機能紹介</a>
-    <a href="#"><i class="fa-solid fa-book-open"></i> 使い方ガイド</a>
+  <%= link_to destroy_user_session_path, 
+              data: { turbo_method: :delete }, 
+              class: "menu-link" do %>
+    <i class="fa-solid fa-right-from-bracket"></i> ログアウト
+  <% end %>
+  <a href="#"><i class="fa-solid fa-star"></i> 機能紹介</a>
+  <a href="#"><i class="fa-solid fa-book-open"></i> 使い方ガイド</a>
 </nav>
 
 <div id="menu-overlay" class="menu-overlay"></div>

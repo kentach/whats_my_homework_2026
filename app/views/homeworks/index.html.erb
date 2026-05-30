@@ -1,0 +1,47 @@
+<%= render 'shared/header' %>
+
+  <!-- 英検級のタブ -->
+<div class="grade-tabs-wrapper">
+  <div class="grade-tabs">
+  </div>
+</div>  
+
+  <!-- 検索バー -->
+  <div class="search-wrapper">
+  <%= form_with url: homeworks_path, method: :get, local: true do |f| %>
+    <%= f.search_field :q, placeholder: "宿題を検索", class: "search-input" %>
+    <%= f.submit "🔍", class: "search-button" %>
+  <% end %>
+</div>
+
+    <!-- 宿題一覧 -->
+<div class="homework-container">
+  <h1 class="page-title">宿題一覧</h1>
+
+    <div class="homework-card">
+      <div class="card-top">
+        <span class="badge grade">pre1</span>
+      </div>
+      <h2 class="title">
+        英検準2級 Week30 宿題
+      </h2>
+      <div class="period">
+        <i class="fa-solid fa-calendar"></i>
+        2026年 5/1 〜 5/8
+      </div>
+    </div>
+
+    <div class="homework-card">
+      <div class="card-top">
+        <span class="badge grade">pre1</span>
+      </div>
+      <h2 class="title">
+        英検準2級 Week31 宿題
+      </h2>
+      <div class="period">
+        <i class="fa-solid fa-calendar"></i>
+        2026年 5/9 〜 5/16
+      </div>
+    </div>
+</div>
+

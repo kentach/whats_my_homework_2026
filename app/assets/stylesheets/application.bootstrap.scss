@@ -1,4 +1,11 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+
+//ログイン画面
 @import './top';
 @import './before_login_header';
+@import './devise';
+
+//トップ画面
+@import './homework_index';
+@import './navigation_bar';

@@ -1,0 +1,100 @@
+/* 全体 */
+.auth-container {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, #ffffff, #fff7ed);
+  padding: 20px;
+}
+
+/* カード */
+.auth-card {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* タイトル */
+.auth-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* フォーム */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: #555;
+  font-weight: 500;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  transition: 0.3s;
+}
+
+.form-control:focus {
+  border-color: #f97316;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(249,115,22,0.1);
+}
+
+/* ボタン */
+.btn {
+  padding: 12px;
+  border-radius: 999px;
+  font-weight: bold;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background: #f97316;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #ea580c;
+  transform: translateY(-2px);
+}
+
+/* 補足 */
+.form-text {
+  color: #999;
+  font-size: 0.85rem;
+}
+
+/* 下リンク */
+.auth-links {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.auth-links a {
+  color: #f97316;
+  text-decoration: none;
+}
+
+.auth-links a:hover {
+  text-decoration: underline;
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  color: #555;
+}
