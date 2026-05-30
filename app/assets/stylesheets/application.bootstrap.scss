@@ -7,5 +7,9 @@
 @import './devise';
 
 //トップ画面
-@import './homework_index';
+@import 'homework_pages/homework_index';
 @import './navigation_bar';
+
+
+//詳細画面
+@import 'homework_pages/homework_show';

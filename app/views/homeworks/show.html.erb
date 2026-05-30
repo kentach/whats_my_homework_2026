@@ -1,2 +1,44 @@
-<h1>Homeworks#show</h1>
-<p>Find me in app/views/homeworks/show.html.erb</p>
+<div class="homework-detail">
+  <!-- 宿題のタイトル　-->
+  <div class="detail-header">
+    <h1 class="detail-title"><%= @homework.title %></h1>
+  </div>
+
+    <!-- 宿題の英検級　-->
+  <div class="detail-badges">
+    <span class="badge grade">
+      <%= @homework.classroom.eiken_level %>
+    </span>
+  </div>
+
+  <p class="detail-content">
+    <%=  %>
+  </p>
+
+  <div class="detail-info">
+    <p>
+      <i class="fa-solid fa-calendar"></i>
+      テスト期間：<%= @homework.test_start_date %> 〜 <%= @homework.test_end_date %>
+    </p>
+  </div>
+
+  <h3 class="task-title">宿題の内容</h3>
+  <ul class="task-description">
+    <li>授業前に必ず宿題の内容を確認しよう！</li>
+    <li>タスクを完了したらチェックをつけてね！</li>
+  </ul>
+    <div id="toast" class="toast"></div>
+  <div class="task-list">
+  
+      <div class="task-item">
+        <label class="task-check-wrap">
+          <input type="checkbox" class="task-check">
+          <span></span>
+          <span class="task-status"></span>
+        </label>
+      </div>
+  
+  </div>
+  <%= link_to "← 一覧に戻る", homeworks_path, class: "back-link" %>
+</div>
+<%= render 'shared/navigation_bar' %>
