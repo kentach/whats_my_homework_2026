@@ -29,15 +29,17 @@
   </ul>
     <div id="toast" class="toast"></div>
   <div class="task-list">
-  
+
+  <!--　宿題一個一個　-->
+    <% @tasks.each do |task| %>
       <div class="task-item">
-        <label class="task-check-wrap">
-          <input type="checkbox" class="task-check">
-          <span></span>
-          <span class="task-status"></span>
-        </label>
+          <label class="task-check-wrap">
+            <input type="checkbox" class="task-check">
+            <span><%= task.name %></span>
+            <span class="task-status"></span>
+          </label>
       </div>
-  
+    <% end %>
   </div>
   <%= link_to "← 一覧に戻る", homeworks_path, class: "back-link" %>
 </div>

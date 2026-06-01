@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   }
   root 'static_pages#top';
 
-  resources :homeworks, only: [:index, :show]
+  resources :homeworks, only: [:index, :show] do
+    resources :tasks, only: [:index, :show]
+  end
 end

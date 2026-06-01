@@ -4,6 +4,7 @@ class Homework < ApplicationRecord
   validates :test_end_date, presence: true
 
   belongs_to :classroom
+  has_many :tasks, dependent: :destroy
   #左側に：をつけるのは、カラム名をつけているから。
 
   #ransack

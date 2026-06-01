@@ -19,5 +19,6 @@ class HomeworksController < ApplicationController
   def show
     @homework = Homework.find(params[:id])
     #params[:homework_id]ではなくparams[:id]にすること！
+    @tasks = @homework.tasks
   end
 end

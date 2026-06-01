@@ -1,9 +1,33 @@
+Task.delete_all
 Homework.delete_all
 Classroom.delete_all
 
+# まずクラス作成
 pre1 = Classroom.create!(
   name: 'Pre1',
   eiken_level: '準1級'
+)
+
+# Pre1の宿題
+pre1_week30 = pre1.homeworks.create!(
+  title: 'Week30 宿題',
+  test_start_date: Date.today,
+  test_end_date: Date.today + 7.days
+)
+
+pre1_week30.tasks.create!(
+  name: 'Week30 単語テスト #1〜60',
+  content: '##'
+)
+
+pre1_week30.tasks.create!(
+  name: 'STEP TALK p.32 Writingの賛成意見を書いて提出。',
+  content: '##'
+)
+
+pre1_week30.tasks.create!(
+  name: 'STEP Power p23の一段落目を音読 最低10回',
+  content: '##'
 )
 
 step2 = Classroom.create!(
@@ -11,87 +35,33 @@ step2 = Classroom.create!(
   eiken_level: '2級'
 )
 
-pre2plus = Classroom.create!(
-  name: 'Pre2 plus',
-  eiken_level: '準2級プラス'
+step2_week30 = step2.homeworks.create!(
+  title: 'Week30 宿題',
+  test_start_date: Date.today,
+  test_end_date: Date.today + 7.days
 )
 
-pre2 = Classroom.create!(
-  name: 'Pre2',
-  eiken_level: '準2級'
+step2_week30.tasks.create!(
+  name: 'Week30 単語テスト #1~50',
+  content: '##'
 )
 
-jh1STEP3 = Classroom.create!(
-  name: 'JH1 STEP3',
-  eiken_level: '中学生 3級'
+step2_week30.tasks.create!(
+  name: 'STEP TALK p.34 賛成意見を書いて提出。',
+  content: '##'
 )
 
-jh1STEP4 = Classroom.create!(
-  name: 'JH1 STEP4',
-  eiken_level: '中学生 4級'
-)
-
-jh1Beginner = Classroom.create!(
-  name: 'JH1 Beginner',
-  eiken_level: '中学生 5級'
-)
-
-ehSTEP2 = Classroom.create!(
-  name: 'EH STEP2',
-  eiken_level: '小学生2級'
-)
-
-ehPre2Plus = Classroom.create!(
-  name: 'EH Pre2 plus',
-  eiken_level: '小学生準2級プラス'
-)
-
-
-ehPre2 = Classroom.create!(
-  name: 'EH pre2',
-  eiken_level: '小学生準2級'
-)
-
-eh3 = Classroom.create!(
-  name: 'EH3',
-  eiken_level: '小学生3級'
-)
-
-
-eh4 = Classroom.create!(
-  name: 'EH4',
-  eiken_level: '小学生高学年4級'
-)
-
-el4 = Classroom.create!(
-  name: 'EL4',
-  eiken_level: '小学生低学年4級'
-)
-
-
-eh5 = Classroom.create!(
-  name: 'EH5',
-  eiken_level: '小学生高学年5級'
-)
-
-
-el5 = Classroom.create!(
-  name: 'EL5',
-  eiken_level: '小学生低学年5級'
-)
-
-classrooms = Classroom.all
-
-classrooms.each do |classroom|
-  classroom.homeworks.create!(
-    title: "#{classroom.eiken_level} Week30 宿題",
-    test_start_date: Date.today,
-    test_end_date: Date.today + 7.days
-  )
-
-  classroom.homeworks.create!(
-    title: "#{classroom.eiken_level} Week31 宿題",
-    test_start_date: Date.today,
-    test_end_date: Date.today + 14.days
-  )
-end
+# 以下クラスのみ作成
+Classroom.create!(name: 'Pre2 plus', eiken_level: '準2級プラス')
+Classroom.create!(name: 'Pre2', eiken_level: '準2級')
+Classroom.create!(name: 'JH1 STEP3', eiken_level: '中学生3級')
+Classroom.create!(name: 'JH1 STEP4', eiken_level: '中学生4級')
+Classroom.create!(name: 'JH1 Beginner', eiken_level: '中学生5級')
+Classroom.create!(name: 'EH STEP2', eiken_level: '小学生2級')
+Classroom.create!(name: 'EH Pre2 plus', eiken_level: '小学生準2級プラス')
+Classroom.create!(name: 'EH pre2', eiken_level: '小学生準2級')
+Classroom.create!(name: 'EH3', eiken_level: '小学生3級')
+Classroom.create!(name: 'EH4', eiken_level: '小学生高学年4級')
+Classroom.create!(name: 'EL4', eiken_level: '小学生低学年4級')
+Classroom.create!(name: 'EH5', eiken_level: '小学生高学年5級')
+Classroom.create!(name: 'EL5', eiken_level: '小学生低学年5級')
