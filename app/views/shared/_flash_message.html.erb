@@ -1,0 +1,21 @@
+<div class="flash-messages">
+    <% flash.each do |message_type, message| %>
+    <!--flash に入っているメッセージを順番に取り出す。-->
+    <!--message_type #=> "notice"-->
+    <!--message      #=> "保存しました"-->
+    <div 
+      class="alert alert-dismissible fade show
+      <%= message_type.to_s == 'notice' ? 'alert-success' : 'alert-danger' %>"
+      role="alert">               <!--alert-successは緑色、alert-dangerは赤色-->
+
+      <%= message %>
+
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close">
+      </button>
+    </div>
+    <% end %>
+</div>
