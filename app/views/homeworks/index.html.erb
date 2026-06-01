@@ -1,37 +1,74 @@
-  <!-- 英検級のタブ -->
-<div class="grade-tabs-wrapper">
-  <div class="grade-tabs">
-  </div>
-</div>  
+<!-- 宿題一覧 -->
+<div class="homework-container">
 
   <!-- 検索バー -->
   <div class="search-wrapper">
-  <%= form_with url: homeworks_path, method: :get, local: true do |f| %>
-    <%= f.search_field :q, placeholder: "宿題を検索", class: "search-input" %>
-    <%= f.submit "🔍", class: "search-button" %>
-  <% end %>
-</div>
-
-    <!-- 宿題一覧 -->
-<div class="homework-container">
-  <h1 class="page-title">宿題一覧</h1>
-
-    <% @homeworks.each do |homework| %>
-        <%= link_to homework_path(homework), class: "homework-card" do %>
-          <!-- link_to 'path', class: '~~~' doで書くこと。 -->
-          <div class="card-top">
-            <span class="badge grade"><%= homework.classroom.eiken_level %></span>
-                                        <!-- homeworkが属しているclassroomのeiken_level -->  
-          </div>
-          <h2 class="title">
-            <%= homework.title %>
-          </h2>
-          <div class="period">
-            <i class="fa-solid fa-calendar"></i>
-            <%= homework.test_start_date %> 〜 <%= homework.test_end_date %>
-          </div>
-        <% end %>
+    <%= search_form_for @q, url: homeworks_path, method: :get do |f| %>
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <%= f.search_field :title_or_content_cont,
+          placeholder: "検索",
+          class: "search-input",
+          id: "searchInput",
+          autocomplete: "off" %>
     <% end %>
+  </div>
+
+  <!-- モダールは外に出す -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-box">
+      <i class="fa-solid fa-circle-xmark modal-close-button"></i>
+      <%= search_form_for @q, url: homeworks_path, method: :get do |f| %>
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <%= f.search_field :title_or_content_cont,
+          class: "modal-search-input",
+          placeholder: "検索",
+          autocomplete: "off" %>
+        <%= f.submit "検索", class: "search-button" %>
+      <% end %>
+      
+      <div class="search-suggest" id="searchSuggest">
+        <div class="suggest-title">検索キーワード</div>
+          <div class="suggest-display-container">
+            <% @all_eiken_levels.each do |eiken_level| %>
+              <div class="suggest-item">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <%= eiken_level.classroom.eiken_level %>
+              </div>
+            <% end %>
+          </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- 英検級のタブ -->
+    <div class="eiken-level-tabs-wrapper">
+      <div class="eiken-level-tabs">
+        <% @classrooms.each do |classroom|  %>
+          <%= link_to classroom.eiken_level, 
+              homeworks_path(classroom_id: classroom.id),
+              class:"eiken-level-tab #{'active' if classroom == @selected_classroom}" %>
+        <% end %>
+        <!-- link_toの時はclass属性は：で書くこと。-->
+      </div>
+    </div>  
+
+    <h1 class="page-title">宿題一覧</h1>
+      <% @homeworks.each do |homework| %>
+          <%= link_to homework_path(homework), class: "homework-card" do %>
+            <!-- link_to 'path', class: '~~~' doで書くこと。 -->
+            <div class="card-top">
+              <span class="badge grade"><%= homework.classroom&.eiken_level %></span>
+                                          <!-- homeworkが属しているclassroomのeiken_level -->  
+            </div>
+            <h2 class="title">
+              <%= homework.title %>
+            </h2>
+            <div class="period">
+              <i class="fa-solid fa-calendar"></i>
+              <%= homework.test_start_date %> 〜 <%= homework.test_end_date %>
+            </div>
+          <% end %>
+      <% end %>
 </div>
 
 <%= render 'shared/navigation_bar' %>
