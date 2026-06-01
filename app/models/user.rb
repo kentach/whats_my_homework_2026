@@ -5,4 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
   belongs_to :classroom
+  has_many :task_completions, dependent: :destroy
+
+  def completed?(task)
+    task_completions.exists?(task: task)
+  end
 end

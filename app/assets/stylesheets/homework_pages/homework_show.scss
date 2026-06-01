@@ -1,4 +1,65 @@
 /* =========================
+  完了ボタンのデザイン
+========================= */
+.completed-btn {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 40px;
+  min-height: 40px;
+}
+
+/*.completed-btn の中にある iタグ全部という意味*/
+.completed-btn i {
+  font-size: 24px;
+  color: #cbd5e1; 
+  transition: transform 0.2s ease, opacity 0.2s ease, color 0.2s ease;
+}
+
+/*.completed-btn の中にある
+iタグでかつ fa-solid クラスを持つ要素*/
+.completed-btn i.fa-solid { 
+  color: rgb(31, 160, 65);
+}
+
+/* ================= SMARTPHONE ================= */
+
+@media (max-width: 768px) {
+
+  .completed-btn {
+    min-width: 34px;
+    min-height: 34px;
+  }
+
+  .completed-btn i {
+    font-size: 21px;
+  }
+
+  .completed-btn:hover i {
+    opacity: 1;
+  }
+}
+
+/* 小さいスマホ */
+@media (max-width: 480px) {
+
+  .completed-btn {
+    min-width: 32px;
+    min-height: 32px;
+  }
+
+  .completed-btn i {
+    font-size: 19px;
+  }
+}
+
+
+/* =========================
   詳細カード（統一デザイン）
 ========================= */
 .homework-detail {
@@ -118,10 +179,10 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-
 }
 
 .task-item {
+  cursor: pointer;
   padding: 12px 14px;
   border-radius: 12px;
   background: #fff;
@@ -130,32 +191,33 @@
   transition: 0.2s;
 }
 
+.task-item.completed {
+  background-color: #e3e3e3;
+}
+
+/* =========================
+  完了したら、タスクに二重線を引く
+========================= */
+.task-item.completed .task-name {
+  text-decoration: line-through;
+  color: #9ca3af;
+  transition: 0.2s;
+}
+
 .task-item:hover {
   transform: translateY(-2px);
 }
 
-.task-done {
-  text-decoration: line-through;
-  color: #9ca3af;
-  background: #f3f4f6;
-  border-left: 4px solid #34d399;
-  padding-left: 8px;
-  transition: 0.2s;
-}
 
 /* =========================
   チェックUI
 ========================= */
 
 .task-check-wrap {
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 10px;
-}
-
-.task-check:checked + span {
-  text-decoration: line-through;
-  color: #bbb;
 }
 
 /* =========================

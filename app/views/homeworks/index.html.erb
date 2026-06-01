@@ -10,6 +10,7 @@
           class: "search-input",
           id: "searchInput",
           autocomplete: "off" %>
+      <%= f.submit "検索", class: "search-button" %>
     <% end %>
   </div>
 
@@ -29,10 +30,10 @@
       <div class="search-suggest" id="searchSuggest">
         <div class="suggest-title">検索キーワード</div>
           <div class="suggest-display-container">
-            <% @all_eiken_levels.each do |eiken_level| %>
+            <% @classrooms.each do |classroom| %>
               <div class="suggest-item">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <%= eiken_level.classroom.eiken_level %>
+                <%= classroom.eiken_level %>
               </div>
             <% end %>
           </div>

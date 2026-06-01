@@ -15,6 +15,7 @@ class Homework < ApplicationRecord
       content
       created_at
       updated_at
+      classroom_id
     ]
   end
 

@@ -1,6 +1,5 @@
 class HomeworksController < ApplicationController
   def index
-    @all_eiken_levels = Homework.includes(:classroom) #全ての英検級の宿題一覧を取得する
     @classrooms = Classroom.all #タブの作成
     
     @q = Homework.ransack(params[:q]) #検索機能ransack。ransack(params[:q])にすること。

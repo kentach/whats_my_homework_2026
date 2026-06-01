@@ -1,0 +1,16 @@
+<div id="completed-button-for-task-<%= task.id %>">
+  <%= button_to task_completions_path(task_id: task.id),
+    #task_completionsコントローラーに@task = Task.find(params[:task_id])と書いてある。
+      method: :post,
+      form: { data: { turbo: true } },
+      #このフォーム送信をTurbo経由で処理してね
+      class: 'completed-btn' do %>
+
+    <% if current_user.completed?(task) %>
+      <i class="fa-solid fa-square-check"></i>
+    <% else %>
+      <i class="fa-regular fa-square-check"></i>
+    <% end %>
+
+  <% end %>
+</div>
