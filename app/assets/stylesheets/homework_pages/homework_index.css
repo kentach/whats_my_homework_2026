@@ -1,4 +1,71 @@
 @charset "UTF-8";
+/* 英検級タブ */
+.eiken-level-tabs-wrapper {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.eiken-level-tabs {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 0 16px;
+  border-bottom: solid 1px #ccc;
+}
+.eiken-level-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.eiken-level-tab {
+  width: 20px;
+  padding: 8px 14px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.eiken-level-tab:hover {
+  background: #fff7ed;
+}
+
+.eiken-level-tab.active {
+  border-bottom: 2px solid #333;
+}
+
+/* 検索バー */
+.search-wrapper {
+  width: 100%;
+  margin: 20px auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.search-wrapper form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-input {
+  flex: 1;
+  height: 44px;
+  padding: 0 12px;
+  border-radius: 22px;
+  font-size: 16px;
+  outline: none;
+}
+.search-input:focus {
+  border-color: #4a90e2;
+}
+
+@media (max-width: 768px) {
+  .search-wrapper {
+    padding: 0 12px;
+  }
+  .search-input {
+    font-size: 14px;
+  }
+}
 .homework-container {
   max-width: 900px;
   margin: 0 auto;

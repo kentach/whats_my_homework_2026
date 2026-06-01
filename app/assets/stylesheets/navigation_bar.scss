@@ -16,22 +16,17 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-
 }
 
 .tab-item {
   flex: 1;
-
   color: #6c757d;
   text-decoration: none;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   min-height: 60px;
-
   padding: 8px 0;
 
   transition:
@@ -42,19 +37,17 @@
 .tab-item i {
   font-size: 1.3rem;
   line-height: 1;
-
   margin-bottom: 4px;
 }
 
 .tab-item span {
   font-size: 0.75rem;
-  line-height: 1;
+  line-height: 1; //行の高さ（行間）を文字サイズの1倍にする、行の高さ = 16px
 }
 
 .tab-item.active {
   color: #28c2c2;
   border-top: 3px solid #28c2c2;
-
   background-color: rgba(40, 194, 194, 0.05);
 }
 

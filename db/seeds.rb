@@ -21,11 +21,6 @@ pre2 = Classroom.create!(
   eiken_level: '準2級'
 )
 
-jh1Beginner = Classroom.create!(
-  name: 'JH1 Beginner',
-  eiken_level: '中学生 5級'
-)
-
 jh1STEP3 = Classroom.create!(
   name: 'JH1 STEP3',
   eiken_level: '中学生 3級'
@@ -36,20 +31,32 @@ jh1STEP4 = Classroom.create!(
   eiken_level: '中学生 4級'
 )
 
-eh3 = Classroom.create!(
-  name: 'EH3',
-  eiken_level: '小学生3級'
+jh1Beginner = Classroom.create!(
+  name: 'JH1 Beginner',
+  eiken_level: '中学生 5級'
 )
 
-ehPre2 = Classroom.create!(
-  name: 'EH pre2',
-  eiken_level: '小学生3級'
+ehSTEP2 = Classroom.create!(
+  name: 'EH STEP2',
+  eiken_level: '小学生2級'
 )
 
 ehPre2Plus = Classroom.create!(
   name: 'EH Pre2 plus',
   eiken_level: '小学生準2級プラス'
 )
+
+
+ehPre2 = Classroom.create!(
+  name: 'EH pre2',
+  eiken_level: '小学生準2級'
+)
+
+eh3 = Classroom.create!(
+  name: 'EH3',
+  eiken_level: '小学生3級'
+)
+
 
 eh4 = Classroom.create!(
   name: 'EH4',
