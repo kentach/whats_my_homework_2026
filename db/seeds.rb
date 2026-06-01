@@ -10,24 +10,21 @@ pre1 = Classroom.create!(
 
 # Pre1の宿題
 pre1_week30 = pre1.homeworks.create!(
-  title: 'Week30 宿題',
+  title: '準1級 Week30 宿題',
   test_start_date: Date.today,
   test_end_date: Date.today + 7.days
 )
 
 pre1_week30.tasks.create!(
-  name: 'Week30 単語テスト #1〜60',
-  content: '##'
+  name: 'Week30 単語テスト #1〜60'
 )
 
 pre1_week30.tasks.create!(
-  name: 'STEP TALK p.32 Writingの賛成意見を書いて提出。',
-  content: '##'
+  name: 'STEP TALK p.32 Writingの賛成意見を書いて提出。'
 )
 
 pre1_week30.tasks.create!(
-  name: 'STEP Power p23の一段落目を音読 最低10回',
-  content: '##'
+  name: 'STEP Power p23の一段落目を音読 最低10回'
 )
 
 step2 = Classroom.create!(
@@ -36,19 +33,17 @@ step2 = Classroom.create!(
 )
 
 step2_week30 = step2.homeworks.create!(
-  title: 'Week30 宿題',
+  title: '2級 Week30 宿題',
   test_start_date: Date.today,
   test_end_date: Date.today + 7.days
 )
 
 step2_week30.tasks.create!(
   name: 'Week30 単語テスト #1~50',
-  content: '##'
 )
 
 step2_week30.tasks.create!(
   name: 'STEP TALK p.34 賛成意見を書いて提出。',
-  content: '##'
 )
 
 # 以下クラスのみ作成

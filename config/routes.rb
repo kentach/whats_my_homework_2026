@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   resources :homeworks, only: [:index, :show] do
     resources :tasks, only: [:index, :show]
   end
+
+  resources :task_completions, only: [:create, :destroy]
 end

@@ -9,6 +9,8 @@ document.addEventListener('turbo:load', () => {
   const modalSearchInput = document.querySelector('.modal-search-input');
   const eikenTabs = document.querySelectorAll('.eiken-level-tab');
 
+  if (!searchInput) return
+
   searchInput.addEventListener('focus', () => {
     searchOverlay.classList.add('active');
     searchSuggest.classList.add('active');

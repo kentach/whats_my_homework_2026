@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_06_01_022251) do
+ActiveRecord::Schema[7.2].define(version: 2026_06_01_055803) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,6 +32,18 @@ ActiveRecord::Schema[7.2].define(version: 2026_06_01_022251) do
     t.index ["classroom_id"], name: "index_homeworks_on_classroom_id"
   end
 
+  create_table "task_completions", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "task_id", null: false
+    t.datetime "completed_at"
+    t.text "memo"
+    t.integer "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_id"], name: "index_task_completions_on_task_id"
+    t.index ["user_id"], name: "index_task_completions_on_user_id"
+  end
+
   create_table "tasks", force: :cascade do |t|
     t.string "name", null: false
     t.text "content"
@@ -50,13 +62,15 @@ ActiveRecord::Schema[7.2].define(version: 2026_06_01_022251) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "classroom_id"
+    t.bigint "classroom_id", null: false
     t.index ["classroom_id"], name: "index_users_on_classroom_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "homeworks", "classrooms"
+  add_foreign_key "task_completions", "tasks"
+  add_foreign_key "task_completions", "users"
   add_foreign_key "tasks", "homeworks"
   add_foreign_key "users", "classrooms"
 end

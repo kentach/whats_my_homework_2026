@@ -1,0 +1,3 @@
+<%= turbo_stream.replace "completed-button-for-task-#{@task.id}" do %>
+  <%= render 'task_completions/completed_button', task: @task %>
+<% end %>
