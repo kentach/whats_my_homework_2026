@@ -24,7 +24,20 @@
 /*.completed-btn の中にある
 iタグでかつ fa-solid クラスを持つ要素*/
 .completed-btn i.fa-solid { 
-  color: rgb(31, 160, 65);
+  color: #28c2c2;
+}
+
+/* =========================
+  完了したら、タスクに二重線を引く
+========================= */
+.task-item.completed .task-name {
+  text-decoration: line-through;
+  color: #9ca3af;
+  transition: 0.2s;
+}
+
+.task-item:hover {
+  transform: translateY(-2px);
 }
 
 /* ================= SMARTPHONE ================= */
@@ -80,9 +93,9 @@ iタグでかつ fa-solid クラスを持つ要素*/
   position: absolute;
   left: 0;
   top: 0;
-  width: 4px;
+  width: 8px;
   height: 100%;
-  background: #f97316;
+  background: #28c2c2;
 }
 
 /* =========================
@@ -122,15 +135,15 @@ iタグでかつ fa-solid クラスを持つ要素*/
 }
 
 .grade {
-  background: rgba(249, 115, 22, 0.1);
-  color: #f97316;
+  background: rgba(22, 116, 249, 0.1);
+  color: #28c2c2;
 }
 
 /* =========================
   本文
 ========================= */
 .detail-content {
-  font-size: 15px;
+  font-size: 16px;
   color: #555;
   margin-bottom: 20px;
   line-height: 1.7;
@@ -149,7 +162,7 @@ iタグでかつ fa-solid クラスを持つ要素*/
 .detail-info p {
   margin: 6px 0;
   color: #666;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 /* =========================
@@ -191,23 +204,6 @@ iタグでかつ fa-solid クラスを持つ要素*/
   transition: 0.2s;
 }
 
-.task-item.completed {
-  background-color: #e3e3e3;
-}
-
-/* =========================
-  完了したら、タスクに二重線を引く
-========================= */
-.task-item.completed .task-name {
-  text-decoration: line-through;
-  color: #9ca3af;
-  transition: 0.2s;
-}
-
-.task-item:hover {
-  transform: translateY(-2px);
-}
-
 
 /* =========================
   チェックUI
@@ -227,7 +223,7 @@ iタグでかつ fa-solid クラスを持つ要素*/
   display: inline-block;
   margin-top: 22px;
   color: white;
-  background: #f97316;
+  background: #28c2c2;
   padding: 8px 14px;
   border-radius: 10px;
   text-decoration: none;
@@ -236,7 +232,7 @@ iタグでかつ fa-solid クラスを持つ要素*/
 }
 
 .back-link:hover {
-  background: #ea580c;
+  background: #28c2c2;
 }
 
 /* ヘッダー */

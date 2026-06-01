@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "What's My Homework?" %></title>
+    <title><%= page_title(yield(:title)) %></title>
+    <!--yield(:title) は、ビューから渡されたシンボルに対応するコンテンツ
+    (今回は、content_forメソッド によって定義されたコンテンツ)を取得する-->
+    
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
@@ -22,6 +25,8 @@
     <% else %>
       <%= render 'shared/before_login_header' %>
     <% end %>
+
+    <%= render 'shared/flash_message' %>
     <%= yield %>
   </body>
 </html>

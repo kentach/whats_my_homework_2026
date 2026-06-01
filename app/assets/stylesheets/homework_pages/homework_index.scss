@@ -95,7 +95,7 @@
 .homework-container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 100px 30px;
+  padding: 80px 30px;
   font-family: 'Helvetica Neue','Helvetica','Arial',sans-serif;
 }
 
@@ -242,10 +242,11 @@
   content: "";
   position: absolute;
   left: 0;
+  border-radius: 10px 0 0 10px; /* 左　右　右下　左下の順 */
   top: 0;
-  width: 4px;
+  width: 8px;
   height: 100%;
-  background: #f97316;
+  background: #28c2c2;
 }
 
 .homework-card:hover {
@@ -268,7 +269,7 @@
 
 .grade {
   background: rgba(249,115,22,0.1);
-  color: #f97316;
+  color: #28c2c2;
 }
 
 .title {
@@ -319,7 +320,7 @@
 }
 
 .grade-tab.active {
-  background: #f97316;
+  background: #28c2c2;
   color: #fff;
 }
 
@@ -337,11 +338,11 @@
 }
 
 .edit-link {
-  background: #f97316;
+  background: #28c2c2;
 }
 
 .delete-link {
-  background: #ef4444;
+  background: #28c2c2;
   margin-left: 6px;
 }
 

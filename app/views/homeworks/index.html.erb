@@ -1,3 +1,5 @@
+<% content_for :title, t('.title') %>
+
 <!-- 宿題一覧 -->
 <div class="homework-container">
 
@@ -6,7 +8,7 @@
     <%= search_form_for @q, url: homeworks_path, method: :get do |f| %>
       <i class="fa-solid fa-magnifying-glass"></i>
       <%= f.search_field :title_or_content_cont,
-          placeholder: "検索",
+          placeholder: "Week ◯◯ or クラス名で検索",
           class: "search-input",
           id: "searchInput",
           autocomplete: "off" %>
@@ -22,7 +24,7 @@
         <i class="fa-solid fa-magnifying-glass"></i>
         <%= f.search_field :title_or_content_cont,
           class: "modal-search-input",
-          placeholder: "検索",
+          placeholder: "Week ◯◯ or クラス名で検索",
           autocomplete: "off" %>
         <%= f.submit "検索", class: "search-button" %>
       <% end %>
