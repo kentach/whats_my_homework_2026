@@ -62,14 +62,19 @@
             <div class="card-top">
               <span class="badge grade"><%= homework.classroom&.eiken_level %></span>
                                           <!-- homeworkが属しているclassroomのeiken_level -->  
+                <% if current_user.completed_homework?(homework) %>
+                  <span class="badge completed">
+                    <i class="fa-solid fa-flag-checkered"></i> Done
+                  </span>
+                <% end %>                     
             </div>
-            <h2 class="title">
-              <%= homework.title %>
-            </h2>
-            <div class="period">
-              <i class="fa-solid fa-calendar"></i>
-              <%= homework.test_start_date %> 〜 <%= homework.test_end_date %>
-            </div>
+              <h2 class="title">
+                <%= homework.title %>
+              </h2>
+              <div class="period">
+                <i class="fa-solid fa-calendar"></i>
+                <%= homework.test_start_date %> 〜 <%= homework.test_end_date %>
+              </div>
           <% end %>
       <% end %>
 </div>

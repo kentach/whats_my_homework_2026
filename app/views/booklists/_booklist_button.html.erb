@@ -1,0 +1,26 @@
+<div id="booklist-button-for-homework-<%= homework.id %>">
+  <!-- booklistに入っていれば、delete -->
+  <% if current_user.booklist?(homework) %>
+    <% booklist = current_user.booklists.find_by(homework: homework) %>
+
+    <%= button_to booklist_path(booklist),
+                  method: :delete,
+                  form: { data: { turbo: true } },
+                  class: "booklist-btn" do %>
+        <div>
+          <i class="fa-solid fa-bookmark"></i>
+        </div>
+    
+    <% end %>
+
+  <% else %>
+  <!-- booklistに入ってなければ、postで追加する -->
+    <%= button_to booklists_path(homework_id: homework.id),
+                  method: :post,
+                  form: { data: { turbo: true } },
+                  class: "booklist-btn" do %>
+      <i class="fa-regular fa-bookmark"></i>
+    <% end %>
+
+  <% end %>
+</div>

@@ -5,6 +5,9 @@ class Homework < ApplicationRecord
 
   belongs_to :classroom
   has_many :tasks, dependent: :destroy
+
+  has_many :booklists, dependent: :destroy
+  has_many :booklists_by_user, through: :booklists, source: :user
   #左側に：をつけるのは、カラム名をつけているから。
 
   #ransack

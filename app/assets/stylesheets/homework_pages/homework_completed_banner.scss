@@ -1,0 +1,22 @@
+.completion-banner {
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 20px;
+
+  background: linear-gradient(
+    135deg,
+    #22c55e,
+    #4ade80
+  );
+
+  color: white;
+  text-align: center;
+
+  box-shadow:
+    0 8px 24px rgba(34, 197, 94, .25);
+}
+
+.completion-banner p {
+  margin-top: 8px;
+  font-size: 16px;
+}

@@ -9,6 +9,12 @@
 
     <%= link_to '#',
         class: "tab-item #{current_page?('#') ? 'active' : ''}" do %>
+        <i class="fa-solid fa-user-graduate"></i>
+      <span>マイホームワーク</span>
+    <% end %>
+
+      <%= link_to '#',
+        class: "tab-item #{current_page?('#') ? 'active' : ''}" do %>
         <i class="fa-solid fa-list"></i>
       <span>ブックリスト</span>
     <% end %>

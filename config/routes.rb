@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     resources :tasks, only: [:index, :show]
   end
 
-  resources :task_completions, only: [:create, :destroy]
+  resources :task_completions, only: [:index, :create, :destroy]
+  resources :booklists, only: [:index, :create, :destroy]
 end
