@@ -1,50 +1,52 @@
 <% content_for :title, t('.title') %>
 
-<div class="homework-detail">
-  <!-- 宿題のタイトル　-->
-  <div class="detail-header">
-    <h1 class="detail-title"><%= @homework.title %></h1>
+<div class="homework-show">
+  <div class="homework-show-container">
+    <div class="show-top">
+      <span class="hero-badge">
+        <%= @homework.classroom.eiken_level %>
+      </span>
+        <div id="booklist-button-for-homework-<%= @homework.id %>">
+            <%= render 'booklists/booklist_button', homework: @homework %>
+            <!-- renderに@homeworkというバリューをhomework:というキーで渡す  -->
+        </div>
+    </div>
+
+    <h1 class="show-title">
+      <%= @homework.title %>
+    </h1>
   </div>
 
-    <!-- 宿題の英検級　-->
-  <div class="detail-badges">
-    <span class="badge grade">
-      <%= @homework.classroom.eiken_level %>
-    </span>
+  <!-- テスト期間 -->
+  <div class="test-period">
+    <p>テスト実施期間：<%= @homework.test_start_date %> 〜 <%= @homework.test_end_date %></p>
   </div>
 
-  <p class="detail-content">
-    <%=  %>
-  </p>
-
-  <div class="detail-info">
-    <p>
-      <i class="fa-solid fa-calendar"></i>
-      テスト期間：<%= @homework.test_start_date %> 〜 <%= @homework.test_end_date %>
-    </p>
-  </div>
-
-
+  <!-- タスク一覧 -->
   <div class="task-list">
-    <h3 class="task-title">宿題の内容</h3>
-        <ul class="task-description">
-          <li>授業前に必ず宿題の内容を確認しよう！</li>
-          <li>タスクを完了したらチェックをつけてね！</li>
-        </ul>
-
-  <!--　宿題一個一個　-->
+    <h3>宿題リスト</h3>
+    <div class="test-info">
+      <ul>
+        <li>授業前に宿題を必ずチェックしよう！</li>
+        <li>宿題が終わったら✅を入れよう！</li>
+      </ul>
+    </div>
     <% @tasks.each do |task| %>
       <div id="task-<%= task.id %>" class="task-item <%= 'completed' if current_user.completed?(task) %>">
         <label class="task-check-wrap">
-            <div id="completed-button-for-task-<%= task.id %>">
-              <%= render 'task_completions/completed_button', task: task %>
-            </div>
-            <span class="task-name"><%= task.name %></span>
+          <!-- チェックボタン-->
+          <div id="completed-button-for-task-<%= task.id %>">
+            <%= render 'task_completions/completed_button', task: task %>
+          </div>
+          <!-- タスク名　-->
+          <span class="task-name">
+            <%= task.name %>
+          </span>
         </label>
       </div>
     <% end %>
+
   </div>
   <%= link_to "← 一覧に戻る", homeworks_path, class: "back-link" %>
 </div>
-
 <%= render 'shared/navigation_bar' %>

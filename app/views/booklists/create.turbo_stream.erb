@@ -1,0 +1,3 @@
+<%= turbo_stream.replace "booklist-button-for-homework-#{@homework.id}" do %>
+  <%= render 'booklists/booklist_button', homework: @homework %>
+<% end %>

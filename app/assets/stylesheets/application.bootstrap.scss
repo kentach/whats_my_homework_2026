@@ -13,6 +13,11 @@
 
 //詳細画面
 @import 'homework_pages/homework_show';
+//タスクチェックマーク
+@import 'homework_pages/completed_button';
+@import "homework_pages/booklist_button";
+@import 'homework_pages/homework_completed_banner';
+
 
 //フラッシュメッセージ
 @import './flash_message'

@@ -1,264 +1,164 @@
-/* =========================
-  完了ボタンのデザイン
-========================= */
-.completed-btn {
-  border: none;
-  background: transparent;
-  padding: 0;
-  cursor: pointer;
+/*全体のコンテイナー*/
+.homework-show {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-bottom: 100px;
+}
+
+/*タイトルのコンテイナー*/
+.homework-show-container {
+  border: 1px solid #f1f5f9;
+  border-radius: 28px;
+  padding: 32px;
+  margin-bottom: 24px;
+
+  box-shadow:
+    0 1px 2px rgba(0,0,0,.04),
+    0 8px 24px rgba(0,0,0,.06);
+    
+  background: linear-gradient(
+    135deg,
+    #ff8800,
+    #ffb302
+  );
+  color: white;
+}
+
+.show-top {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  min-width: 40px;
-  min-height: 40px;
 }
 
-/*.completed-btn の中にある iタグ全部という意味*/
-.completed-btn i {
-  font-size: 24px;
-  color: #cbd5e1; 
-  transition: transform 0.2s ease, opacity 0.2s ease, color 0.2s ease;
-}
-
-/*.completed-btn の中にある
-iタグでかつ fa-solid クラスを持つ要素*/
-.completed-btn i.fa-solid { 
-  color: #28c2c2;
-}
-
-/* =========================
-  完了したら、タスクに二重線を引く
-========================= */
-.task-item.completed .task-name {
-  text-decoration: line-through;
-  color: #9ca3af;
-  transition: 0.2s;
-}
-
-.task-item:hover {
-  transform: translateY(-2px);
-}
-
-/* ================= SMARTPHONE ================= */
-
-@media (max-width: 768px) {
-
-  .completed-btn {
-    min-width: 34px;
-    min-height: 34px;
-  }
-
-  .completed-btn i {
-    font-size: 21px;
-  }
-
-  .completed-btn:hover i {
-    opacity: 1;
-  }
-}
-
-/* 小さいスマホ */
-@media (max-width: 480px) {
-
-  .completed-btn {
-    min-width: 32px;
-    min-height: 32px;
-  }
-
-  .completed-btn i {
-    font-size: 19px;
-  }
-}
-
-
-/* =========================
-  詳細カード（統一デザイン）
-========================= */
-.homework-detail {
-  max-width: 700px;
-  margin: 110px auto;
-  padding: 22px 22px 24px;
-  background: linear-gradient(135deg, #ffffff, #fafafa);
-  border-radius: 18px;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.06);
-  border: 1px solid #f1f1f1;
-  position: relative;
-  overflow: hidden;
-}
-
-/* 左アクセント */
-.homework-detail::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 8px;
-  height: 100%;
-  background: #28c2c2;
-}
-
-/* =========================
-  ヘッダー（編集ボタン位置）
-========================= */
-.container {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 10px;
-}
-
-/* =========================
-  タイトル
-========================= */
-.detail-title {
-  font-size: 24px;
-  margin-bottom: 12px;
-  color: #111;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-}
-
-/* =========================
-  バッジ
-========================= */
-.detail-badges {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 18px;
-}
-
-.badge {
-  padding: 4px 12px;
+.hero-badge {
+  background: #fff3e0;
+  color: #ff8c00;
+  padding: 6px 14px;
   border-radius: 999px;
   font-size: 14px;
   font-weight: 600;
 }
 
-.grade {
-  background: rgba(22, 116, 249, 0.1);
-  color: #28c2c2;
+.show-title {
+  margin-top: 20px;
+  margin-bottom: 8px;
+  font-size: 28px;
+  font-weight: 700;
 }
 
-/* =========================
-  本文
-========================= */
-.detail-content {
-  font-size: 16px;
-  color: #555;
-  margin-bottom: 20px;
-  line-height: 1.7;
-}
-
-/* =========================
-  情報（枠付き）
-========================= */
-.detail-info {
-  background: #fafafa;
-  border-radius: 12px;
-  padding: 12px 14px;
-  border: 1px solid #eee;
-}
-
-.detail-info p {
-  margin: 6px 0;
-  color: #666;
-  font-size: 18px;
-}
-
-/* =========================
-  タスクタイトル
-========================= */
-.task-title {
-  font-size: 20px;
-  margin: 22px 18px 22px;
-  color: #111;
-  font-weight: 600;
-}
-
-.task-description li {
-  font-size: 16px;
-  font-weight: 600;
-  color: #111;
-  margin: 0 18px;
-  text-align: center;
-  list-style: none;
-}
-
-/* =========================
-  タスクカード化
-========================= */
-.task-list {
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.task-item {
-  cursor: pointer;
-  padding: 12px 14px;
-  border-radius: 12px;
-  background: #fff;
-  border: 1px solid #f1f1f1;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.04);
-  transition: 0.2s;
-}
-
-
-/* =========================
-  チェックUI
-========================= */
-
-.task-check-wrap {
-  cursor: pointer;
+.hero-date {
   display: flex;
   align-items: center;
-  gap: 10px;
-}
-
-/* =========================
-  戻るリンク（ボタン化）
-========================= */
-.back-link {
-  display: inline-block;
-  margin-top: 22px;
-  color: white;
-  background: #28c2c2;
-  padding: 8px 14px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-size: 14px;
-  transition: 0.2s;
-}
-
-.back-link:hover {
-  background: #28c2c2;
-}
-
-/* ヘッダー */
-.detail-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-}
-
-/* ボタンエリア */
-.action-buttons {
-  display: flex;
   gap: 8px;
 }
 
+/* =====================
+  テスト期間
+===================== */
 
-/* スマホ対応 */
-@media (max-width: 600px) {
-  .detail-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+.test-period {
+  background: #333;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  color: #fff;
+}
 
-  .action-buttons {
-    width: 100%;
-    justify-content: flex-end;
-  }
+.test-period p {
+  margin: 0; /*pタグにはデフォルトでマージンがついている*/
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* =====================
+  タスク
+===================== */
+
+.task-list {
+  margin: 20px 0;
+}
+
+.task-list h3 {
+  margin-left: 12px;
+  text-align: center;
+}
+
+.test-info ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.test-info ul li {
+  text-align: center;
+  list-style: none;
+  font-size: 18px;
+}
+
+/* =====================
+  タスクアイテムの一個一個
+===================== */
+.task-item {
+  background: white;
+  border-radius: 18px;
+  padding: 18px;
+  margin-bottom: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
+}
+
+.task-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+/*宿題の一個一個*/
+.task-check-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+}
+
+.task-name {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.task-item.completed {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    #dcfce7,
+    #bbf7d0
+  );
+  border: 2px solid #22c55e;
+  box-shadow:
+    0 8px 24px rgba(34, 197, 94, 0.25);
+}
+
+
+.task-item.completed .task-name {
+  color: #166534;
+  font-weight: 700;
+}
+
+/* =====================
+   戻る
+===================== */
+
+.back-link {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  background-color: rgb(255, 149, 0);
+  padding: 10px 16px;
+  border-radius: 12px;
+}
+
+.back-link:hover {
+  opacity: .8;
 }

@@ -12,7 +12,7 @@
 .search-wrapper {
   position: relative;
   width: 100%;
-  max-width: 900px;   /* ←広さ制御 */
+  max-width: 900px; 
   margin: 20px auto;
   padding: 0 16px;
   box-sizing: border-box;
@@ -29,7 +29,6 @@
   padding: 0 12px;
   border-radius: 22px;
   font-size: 16px;
-  
   border: 1px solid #ccc;
   box-shadow: 0 6px 16px rgba(0,0,0,0.06);
   outline: none;
@@ -37,7 +36,7 @@
 }
 
 .search-input:focus {
-  border-color: #4a90e2;
+  border-color:rgb(255, 149, 0);
 }
 
 .modal-search-input {
@@ -47,7 +46,6 @@
   padding: 0 12px;
   border-radius: 22px;
   font-size: 16px;
-  
   border: 1px solid #ccc;
   box-shadow: 0 6px 16px rgba(0,0,0,0.06);
   outline: none;
@@ -55,13 +53,13 @@
 }
 
 .modal-search-input:focus {
-  border-color: #4a90e2;
+  border-color:rgb(255, 149, 0);;
 }
 
-/* ボタン */
+/* 検索ボタン */
 .search-button {
   padding: 8px 16px;
-  background-color: #28c2c2;
+  background-color: rgb(255, 149, 0);
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -191,7 +189,7 @@
 
 .suggest-display-container {
   display: flex;
-  flex-wrap: wrap;   /*　flex-wrap: wrapにする　*/
+  flex-wrap: wrap;  
   gap: 8px;
   padding: 10px;
 }
@@ -246,7 +244,7 @@
   top: 0;
   width: 8px;
   height: 100%;
-  background: #28c2c2;
+  background:rgb(255, 149, 0);
 }
 
 .homework-card:hover {
@@ -269,7 +267,7 @@
 
 .grade {
   background: rgba(249,115,22,0.1);
-  color: #28c2c2;
+  color: rgb(255, 149, 0);
 }
 
 .title {
@@ -320,40 +318,6 @@
 }
 
 .grade-tab.active {
-  background: #28c2c2;
+  background: rgb(255, 149, 0);
   color: #fff;
-}
-
-/* =========================
-   アクション
-========================= */
-.edit-link,
-.delete-link {
-  font-size: 13px;
-  font-weight: 600;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 8px;
-  text-decoration: none;
-}
-
-.edit-link {
-  background: #28c2c2;
-}
-
-.delete-link {
-  background: #28c2c2;
-  margin-left: 6px;
-}
-
-/* =========================
-   ページネーション
-========================= */
-.pagination {
-  gap: 8px;
-}
-
-.page-link {
-  border-radius: 8px;
-  padding: 6px 12px;
 }
